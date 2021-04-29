@@ -1,0 +1,96 @@
+@import "mixins.scss";
+@import "variables.scss";
+@import "forms.scss";
+@import "global.scss";
+
+//@import "article-full";
+
+.Main-user {
+
+  .CommentList-container {
+
+    section article {
+
+      background-color: #f3f1ef;
+      margin-right: 1em;
+      //display: block;
+      padding-bottom: 1em;
+      margin-top: 1em;
+
+    }
+  }
+
+  .CommentList {
+
+    //border:1px ridge black;
+    border-radius: 12px;
+    margin-top: 1em;
+    margin-right: 1em;
+    background-color: #fffdfdb3;
+
+    // .CommentList__author {
+    //     margin-left: 1em;
+    //     font-style: italic;
+    // }
+
+    // .CommentList__date {
+    //     margin-left: 1em;
+    //     display: flex;
+    //     padding-top: 0.5em;
+    //     font-style: italic;
+    // }
+
+    .CommentList__exerpt {
+
+      padding: 0.5em;
+      line-height: 1.5em;
+
+    }
+
+    // .MainMenu__scrolling {
+
+    //     margin-bottom: 1em;
+    //     margin-left: 1em;
+    // }
+
+    //.CommentList__choice {
+      margin-bottom: 1em;
+    //     margin-left: 1em;
+     //}
+
+    .FullArticle__score {
+
+      margin-bottom: 1em;
+      margin-left: 1em;
+      text-shadow: 2px 2px rgb(158, 155, 155);
+      
+    }
+
+    // .Button__add {
+
+    //     margin-bottom: 1em;
+    //     margin-left: 53em;
+    // }
+
+    // .label {
+
+
+    //     margin: 1em;
+    //     padding: 1em;
+    //     line-height: 2em;
+
+    // }
+
+    // .abus {
+
+    //     padding-bottom: 1em;
+    //     margin-left: 1em;
+
+    // }
+
+    // .abus a:hover {
+
+    //     color: red;
+  }
+
+}

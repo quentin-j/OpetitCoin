@@ -1,0 +1,286 @@
+.Main-login {
+
+  h2 {
+
+   color: $NotConnect;
+   //margin-top: 2em;
+   margin-bottom: 1em;
+   font-size: 2em;
+   font-weight: bold;
+   padding-top: 1em;
+
+   }
+
+   text-align: center;
+
+}
+
+.Main-register {
+
+ h2 {
+
+   color: $NotConnect;
+   //margin-top: 2em;
+   margin-bottom: 1em;
+   font-size: 2em;
+   font-weight: bold;
+   padding-top: 1em;
+
+  }
+
+  text-align: center;
+  
+} 
+
+.Main-article {
+
+ h2 {
+
+    color: $NotConnect;
+    //margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    font-weight: bold;
+    padding-top: 1em;
+
+  }
+
+  text-align: center;
+
+}
+
+.Main-contact {
+
+  h2 { 
+
+     color: $NotConnect;
+     //margin-top: 2em;
+     margin-bottom: 1em;
+     font-size: 2em;
+     font-weight: bold;
+     padding-top: 1em;
+
+   }
+
+   text-align: center;
+
+ }
+
+ .Main-user {
+
+  h2 {
+
+     color: $NotConnect;
+     //margin-top: 2em;
+     margin-bottom: 1em;
+     font-size: 2em;
+     font-weight: bold;
+     padding-top: 1em;
+
+   }
+
+   text-align: center;
+
+ }
+
+   h3 {
+
+    color: $NotConnect;
+    //margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 1em;
+
+  }
+   
+form {
+
+   fieldset { 
+
+     border: none;
+      
+     .field { 
+
+       margin-bottom: 1rem;
+
+     }
+
+     .login {
+
+       margin: auto;
+       width: 30%;
+
+     }
+
+     .register{
+
+       margin: auto;
+       width: 40%;
+
+     }
+
+     .articleAdd {
+
+       margin: auto;
+       width: 40%;
+
+     }
+     
+     .contact {
+
+      margin: auto;
+      width: 40%;
+
+    }
+
+    .user {
+
+      margin: auto;
+      width: 40%;
+
+    }
+   }
+}
+ 
+ .field {
+
+   $self: &;
+
+   display: flex;
+
+   flex: {
+
+     direction: column;
+     wrap: wrap;
+
+   }
+ 
+   &__label {
+
+     margin-bottom: 0.5rem;
+     text-align: left;
+     color: $NotConnect;
+     font-size: 19px;
+    font-weight: bold;
+
+   }
+ 
+   &__input {
+
+     padding: 1rem 2rem;
+     border: 2px solid $NotConnect;
+     border-radius: 0.5rem;
+     background-color: $BackgroundHtml;
+     margin-bottom: 1rem;
+     font-family: Arial;
+     color: $NotConnect;
+
+   }
+
+   &__description {
+
+     padding: 1rem 2rem;
+     height: 10em;
+     border: 2px solid $NotConnect;
+     border-radius: 0.5rem;
+     background-color: $BackgroundHtml;
+     margin-bottom: 1rem;
+     font-family: Arial;
+
+   }
+ 
+   &__input:focus {
+
+     outline-color: $BackgroundHtml;
+     outline-width: 1px;
+
+   }
+ 
+   &--error {
+
+     #{$self}__label {
+
+       color: $NotConnect;
+
+     }
+ 
+     #{$self}__input {
+
+       border-color: $ErrorColor;
+       color: $ErrorColor;
+ 
+       &::placeholder {
+
+         color: $ErrorColor;
+
+       }
+     }
+   }
+ 
+   &__error-list {
+
+     color: $ErrorColor;
+     list-style: none;
+     text-align: left;
+     padding-left: 0;
+
+   }
+ }
+ 
+ textarea {
+
+   &.field__input {
+
+     width: 100%;
+     height: 8rem;
+     padding: 1rem 2rem;
+     border:  2px solid $NotConnect;
+     border-radius: 0.5rem;
+     background-color: $BackgroundHtml;
+     margin-bottom: 1rem;
+     font-family: Arial;
+     color: $NotConnect;
+
+   }
+ }
+ 
+ .alert {
+
+   padding: 1rem;
+   border-radius: 0.5rem;
+   margin-bottom: 1rem;
+ 
+   &.error {
+
+     background-color: $ErrorColor;
+     color: white;
+
+   }
+ 
+   &.success {
+
+     background-color: $BackgroundHtml;
+     color: white;
+
+   }
+ }
+ 
+ .button {
+
+   background-color: $NotConnect;
+   color: $BackgroundHtml;
+   margin-bottom: 2em;
+   border: none;
+   border-radius: 0.25rem;
+   //cursor: pointer;
+   font-size: 1rem;
+   padding: 0.5rem 1rem;
+ 
+   &:hover {
+
+     color: $NotConnect;
+     background-color: $ToilettePaper;
+
+   }
+ }

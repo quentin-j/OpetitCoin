@@ -1,0 +1,55 @@
+@import 'variables.scss';
+// pour le header la class Responsive doit s'afficher et les nav class MainMenu doivent disparaîtres
+
+.Responsive {
+
+    display: none;
+
+}
+
+// Dans le header si l'user et connecté passé Connected à true et Connection à false (display none)
+.Connected {
+
+    display: none;
+
+    a {
+
+        background-color: $IsConnect;
+        padding: 0.2em;
+        border-radius: 5px;
+        border: $BackgroundHeader;
+        margin: 2em;
+
+    }
+
+    a:hover {
+
+        transition-duration: 1s;
+        background-color: #95F196;
+        font-size: 1.1em;
+        margin: 0em;
+        color: black;
+
+    }
+}
+
+// les mixins suivantes crééent des media queries réutilisables simplement
+
+@mixin small-only {
+
+    @media (max-width: $breakpoint-medium) {
+
+        @content;
+
+    }
+}
+
+@mixin medium {
+
+    @media (min-width: $breakpoint-medium) {
+
+        @content;
+
+    }
+}
+

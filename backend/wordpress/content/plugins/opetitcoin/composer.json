@@ -1,0 +1,14 @@
+{
+    "name": "etudiant/opetitcoin",
+    "description": "projet apothéose",
+    "authors": [
+        {
+            "name": "quentin-j",
+            "email": "quentin678jougla@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"OpetitCoin\\":"."}
+    }
+}

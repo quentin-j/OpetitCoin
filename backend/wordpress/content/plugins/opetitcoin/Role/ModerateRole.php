@@ -8,7 +8,7 @@ class ModerateRole extends Role
     const ROLE_NAME = 'moderateur'; 
     const ROLE_CAPABILITIES = [
         'read' => true,
-        'edit_posts' => true,   // capabilities à redéfinir
+        'edit_posts' => true,   
         'upload_files' => true,
         'edit_other_posts' => true,
         'edit_comment' => true,
@@ -36,6 +36,14 @@ class ModerateRole extends Role
         'delete_toilette' => true,
         'edit_others_toilettes' => true,
         'delete_others_toilettes' => true,
-        'edit_toilette' => true
+        'edit_toilette' => true,
+
+        'edit_locations' => true,
+        'publish_locations'=> true,
+        'read_location' => true,
+        'delete_location' => true,
+        'edit_others_locations' => true,
+        'delete_others_locations' => true,
+        'edit_location' => true
     ];
 }

@@ -58,7 +58,7 @@ class RestFields
             }
         }
     }
-        static public function registerMetaCommentsFields()
+        /*static public function registerMetaCommentsFields()
         {
             // si on a des meta
             if (CommentType::COMMENT_TYPE_META_KEYS) {
@@ -80,7 +80,7 @@ class RestFields
                     );
                 }
             }
-    }
+    }*/
 
 
 }

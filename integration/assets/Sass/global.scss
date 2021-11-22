@@ -14,7 +14,7 @@ body {
 
     position: absolute;
     background-color: $BackgroundHtml;
-    background-image: url('../assets/image/backgroundHTML.png');
+    background-image: url('../image/backgroundHTML.png');
     
     
 }
@@ -55,7 +55,7 @@ header {
 
         display: flex;
         flex-direction: column;
-        background-image: url('../assets/image/backgroundHeader.png');
+        background-image: url('../image/backgroundHeader.png');
         line-height: 1.4;
 
         @include small-only {
@@ -186,7 +186,7 @@ header {
 
 .Footer {
 
-    background-image: url("../assets/image/footerBackground.png");
+    background-image: url("../image/footerBackground.png");
     background-size: cover;
     color: #FFF;
     display: flex;

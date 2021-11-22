@@ -32,18 +32,4 @@ class CommentType
         }
     }
 
-    static public function register_comment_field($comment_id) {
-        // get new value
-        $confort = get_field('score_confort');
-        $proprete = get_field('score_clean');
-        $equipment = get_field('score_equipment'); var_dump($equipment);
-        // do something
-        $score_global = $confort + $proprete + $equipment;
-        print_r($score_global);
-        $score_final = $score_global / 3;
-        var_dump($score_final);
-        $score = number_format($score_final,1);
-        var_dump($score);
-        update_field('result', $score, $comment_id );
-    }
 }

@@ -19,7 +19,7 @@ export default {
                     Authorization: 'Bearer ' + localStorage.getItem('token')
                 }
             })
-            .then(() => {
+          .then(() => {
                 router.push({
                     name: 'home'
                 })

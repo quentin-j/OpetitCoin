@@ -2,6 +2,8 @@
 
 namespace OpetitCoin\Taxonomy;
 
+use OpetitCoin\PostType\ToilettePostType;
+
 class UtilTaxonomy extends Taxonomy
 {
     const TAXONOMY_LABELS = [
@@ -20,6 +22,8 @@ class UtilTaxonomy extends Taxonomy
     ];
 
     const REST_BASE = 'toilette_utilisateurs';
+
+    const RELATED_CPT_LIST = [ToilettePostType::POST_TYPE_KEY];
 
     const HIERARCHICAL = true;
 }

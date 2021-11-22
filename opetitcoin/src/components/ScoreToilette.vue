@@ -6,11 +6,8 @@
                 <div v-if="p<=addResult()">
                     <i class="win fas fa-toilet-paper"></i>
                 </div>
-                <div v-else-if="p=[0]">
-                    <p></p>
-                </div>
                 <div class="nony" v-else>                    
-                    <i class="test-black fas fa-poo"></i><!--étoile vide à changer si posible pq vide ou background gris-->
+                    <i class="fail fas fa-poo"></i>
                 </div><!--fin de la condition-->
             </div>
         </div>
@@ -47,8 +44,8 @@ export default {
              for(let z = 0; z < this.commentsDatas.length; z++){
                 cal_moyenne_total = cal_moyenne_total + parseInt(this.commentsDatas[z].meta.result[0]);
              }
-
-             return parseInt(cal_moyenne_total/this.commentsDatas.length);                
+            console.log(parseInt(cal_moyenne_total/this.commentsDatas.length));
+             return Math.round(parseInt(cal_moyenne_total/this.commentsDatas.length));                
         }
     }
 }
@@ -87,9 +84,10 @@ export default {
         color: $ToilettePaperBis;
     @include small-only {
        margin-left: 0.5em;       
- 
    }
 }
-
+    .fail {
+        color: $CouleurCacaEmoji;
+    }
 }
 </style>

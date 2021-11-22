@@ -18,7 +18,7 @@
                     </div>
                     <div class="field">
                         <label class="field__label">Confirmation du mot de passe</label>
-                        <input class="field__input" type="password" placeholder="Confirmez votre mot de passe" v-model="password_confirmation" />
+                        <input class="field__input" type="password" placeholder="Confirmez votre mot de passe" v-model="password_confirmation" required/>
                     </div>
                 </div> 
             </fieldset>
@@ -47,7 +47,7 @@ export default {
         return {
             user: {
                 username:'',
-                passord:'',
+                password:'',
                 email:''
 
             },
@@ -56,8 +56,14 @@ export default {
         };
     },
     methods: {
-        addUser() {
-            AuthenticationService.createUser(this.user)
+        addUser(e) {
+            
+             if(!this.ccc || this.user.password != this.password_confirmation) {
+                e.preventDefault();
+            }else {
+                AuthenticationService.createUser(this.user);
+            }
+            
         },
         toggleButton(){
             this.ccc = !this.ccc;

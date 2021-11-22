@@ -3,17 +3,24 @@
 namespace OpetitCoin;
 
 use OpetitCoin\PostType\ToilettePostType;
+use OpetitCoin\PostType\LocationPostType;
 
 use OpetitCoin\Taxonomy\PlaceTaxonomy;
 use OpetitCoin\Taxonomy\UtilTaxonomy;
 use OpetitCoin\Taxonomy\GoldenBowlTaxonomy;
+use OpetitCoin\Taxonomy\DepartmentTaxonomy;
 
 use OpetitCoin\Role\ModerateRole;
 use OpetitCoin\Role\PooperRole;
 
+use OpetitCoin\Classes\Database;
+
 define('TOILETTE_POST_TYPE_CLASS', 'OpetitCoin\PostType\ToilettePostType');
+define('LOCATION_POST_TYPE_CLASS', 'OpetitCoin\PostType\LocationPostType');
 define('REST_FIELD_CLASS', 'OpetitCoin\Rest\RestFields');
 define('COMMENT_TYPE_CLASS', 'OpetitCoin\CommentType\CommentType');
+define('DATABASE', 'OpetitCoin\Classes\Database');
+
 
 class Plugin
 {
@@ -31,13 +38,16 @@ class Plugin
        add_action('init', [TOILETTE_POST_TYPE_CLASS, 'register']);
        add_action('init', [TOILETTE_POST_TYPE_CLASS, 'registerMetas']);
        add_filter('excerpt_length', [TOILETTE_POST_TYPE_CLASS, 'new_excerpt_length']);
-       // relate restfield/meta(acf ?)
+        // relate PostType
+        add_action('init', [LOCATION_POST_TYPE_CLASS, 'register']);
+        add_action('init', [LOCATION_POST_TYPE_CLASS, 'registerMetas']);
+        add_filter('excerpt_length', [LOCATION_POST_TYPE_CLASS, 'new_excerpt_length']);
+       // relate restfield/meta(acf)
        add_action('rest_api_init', [REST_FIELD_CLASS, 'registerFeaturedMediaUrlField']);
        add_action('rest_api_init', [REST_FIELD_CLASS, 'registerMetaFields']);
        add_action('acf/save_post', [REST_FIELD_CLASS, 'registerMetaCommentsFields']);
        // CommentType
        add_action('init', [COMMENT_TYPE_CLASS, 'registerMetas']);
-       add_action('acf/save_post', [COMMENT_TYPE_CLASS, 'register_comment_field']);
 
        // relate Taxonomy
        add_action('init', [self::class, 'registerTaxonomies']);
@@ -48,7 +58,6 @@ class Plugin
 
     /**
      * add rôle
-     *
      * @return void
      */
     static public function addRoles()
@@ -56,11 +65,11 @@ class Plugin
         ModerateRole::add();
         PooperRole::add();
         ToilettePostType::addAdminCaps();
+        LocationPostType::addAdminCaps();
     }
 
     /**
      * remove rôle
-     *
      * @return void
      */
     static public function removeRoles()
@@ -74,11 +83,15 @@ class Plugin
         PlaceTaxonomy::register();
         UtilTaxonomy::register();
         GoldenBowlTaxonomy::register();
+        DepartmentTaxonomy::register();
     }
 
     static public function addCaps()
     {
         ToilettePostType::addAdminCaps();
+        LocationPostType::addAdminCaps();
+
+        DepartmentTaxonomy::addAdminCapabilities();
         PlaceTaxonomy::addAdminCapabilities();        
         UtilTaxonomy::addAdminCapabilities();
         GoldenBowlTaxonomy::addAdminCapabilities();
@@ -87,6 +100,9 @@ class Plugin
     static public function removeCaps()
     {
         ToilettePostType::removeAdminCaps();
+        LocationPostType::removeAdminCaps();
+
+        DepartmentTaxonomy::removeAdminCapabilities();
         PlaceTaxonomy::removeAdminCapabilities();        
         UtilTaxonomy::removeAdminCapabilities();
         GoldenBowlTaxonomy::removeAdminCapabilities();
@@ -94,11 +110,11 @@ class Plugin
 
         /**
      * on activation plugins
-     *
      * @return void
      */
     static public function onPluginActivation()
     {
+        Database::generateLocalizationUserTable();
         self::addRoles();
         self::registerTaxonomies();
         self::addCaps();

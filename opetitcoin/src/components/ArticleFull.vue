@@ -88,9 +88,7 @@ export default {
          commentData: []
        }
      },
-}
-
-     
+}     
 
 </script>
 

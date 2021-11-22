@@ -19,7 +19,7 @@ class Taxonomy
         register_taxonomy(
             static::TAXONOMY_KEY,
             // pour le moment, on a qu'un CPT principal, on l'appel direct ici, demain, si on a des taxos pour plusieurs CPT, on remplace par une constante
-            ToilettePostType::POST_TYPE_KEY,
+            static::RELATED_CPT_LIST,
             [
                 'labels' => $labels,
                 'public' => true,

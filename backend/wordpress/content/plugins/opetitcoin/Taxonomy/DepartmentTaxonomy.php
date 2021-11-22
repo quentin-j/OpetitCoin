@@ -1,6 +1,8 @@
 <?php
 namespace OpetitCoin\Taxonomy;
 
+use OpetitCoin\PostType\LocationPostType;
+
 class DepartmentTaxonomy extends Taxonomy
 {
     const TAXONOMY_LABELS = [
@@ -19,6 +21,8 @@ class DepartmentTaxonomy extends Taxonomy
     ];
 
     const REST_BASE = self::TAXONOMY_KEY;
+
+    const RELATED_CPT_LIST = [LocationPostType::POST_TYPE_KEY];
 
     const HIERARCHICAL = false;
 }

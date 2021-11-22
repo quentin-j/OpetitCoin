@@ -13,5 +13,6 @@ namespace OpetitCoin;
  require __DIR__ . '/vendor/autoload.php';
 
  define('OPETITCOIN_PLUGIN_FILE', __FILE__);
+ define('OPETITCOIN_TEMPLATES_DIR', __DIR__.'/templates/');
 
  Plugin::run();
